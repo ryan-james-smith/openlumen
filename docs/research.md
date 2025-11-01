@@ -158,10 +158,12 @@ Add programmable flicker (30–60 Hz range) with adjustable duty cycle; default 
 
 ## 📚 References
 
-The complete, linked reference table is available in  
-[`/docs/references.md`](./references.md).  
-For developers, the structured JSON version is in  
-[`/docs/research_sources.json`](./research_sources.json).
+For the complete list of scientific sources that inform OpenLumen’s wavelength selections, exposure parameters, and design principles, see:
+
+- [**Full Reference Library (Markdown)**](./references.md) – A human-readable table of all peer-reviewed papers and institutional sources used in this project.  
+- [**Structured Source Data (JSON)**](./research_sources.json) – Machine-readable citation metadata for use in documentation pipelines or web UIs.
+
+These resources are continuously updated as new studies emerge and OpenLumen expands into new light-based applications.
 
 ---
 
