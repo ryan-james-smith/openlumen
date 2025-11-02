@@ -47,18 +47,18 @@ extra:
 
 nav:
   - Overview:
-      - "Welcome": docs/index.md
-      - "Project Goals": docs/goals.md
+      - "Welcome": index.md
+      - "Project Goals": goals.md
   - Build:
-      - "Getting Started": docs/build/getting-started.md
-      - "Hardware Overview": docs/build/hardware-overview.md
-      - "Firmware & UI": docs/build/firmware-ui.md
-      - "Safety": docs/build/safety.md
+      - "Getting Started": build/getting-started.md
+      - "Hardware Overview": build/hardware-overview.md
+      - "Firmware & UI": build/firmware-ui.md
+      - "Safety": build/safety.md
   - Research:
-      - "Design Rationale": docs/research.md
-      - "Reference Library": docs/references.md
+      - "Design Rationale": research.md
+      - "Reference Library": references.md
   - Data:
-      - "Sources (JSON)": docs/research_sources.json
+      - "Sources (JSON)": research_sources.json
   - Legal:
-      - "Licenses": docs/licenses.md
+      - "Licenses": licenses.md
       - "Commercial License": COMMERCIAL_LICENSE.md
