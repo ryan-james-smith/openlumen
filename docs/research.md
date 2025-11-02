@@ -167,5 +167,5 @@ These resources are continuously updated as new studies emerge and OpenLumen exp
 
 ---
 
-*Prepared for the OpenLumen Project by Fat Possum Pty Ltd – 2025.*  
+*Prepared for the OpenLumen Project by Don't Die Gloriously – 2025.*  
 *All citations link to open-access or peer-reviewed sources.*
