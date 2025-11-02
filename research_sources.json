@@ -1,0 +1,119 @@
+[
+  {
+    "id": 1,
+    "title": "Seasonal Affective Disorder Treatment: Choosing a Light Box",
+    "authors": "Mayo Clinic Staff",
+    "year": 2024,
+    "source": "Mayo Clinic",
+    "url": "https://www.mayoclinic.org/diseases-conditions/seasonal-affective-disorder/in-depth/seasonal-affective-disorder-treatment/art-20048298",
+    "category": "Circadian / Bright Light Therapy"
+  },
+  {
+    "id": 2,
+    "title": "Comparative Effects of Red and Blue LED Light on Melatonin Levels",
+    "authors": "Li et al.",
+    "year": 2025,
+    "source": "Frontiers in Physiology / PMC",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12113466/",
+    "category": "Circadian / Melatonin"
+  },
+  {
+    "id": 3,
+    "title": "Dawn Simulation as a Countermeasure to Sleep Inertia",
+    "authors": "Okamoto-Mizuno et al.",
+    "year": 2016,
+    "source": "Industrial Health Journal / PMC",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5136610/",
+    "category": "Circadian / Dawn Simulation"
+  },
+  {
+    "id": 4,
+    "title": "Action Spectrum for Vitamin D Synthesis",
+    "authors": "NIWA (National Institute of Water and Atmospheric Research)",
+    "year": 2011,
+    "source": "NIWA, New Zealand",
+    "url": "https://niwa.co.nz/sites/default/files/action_spectrum_for_vit_d_synthesis.pdf",
+    "category": "Vitamin D / UVB"
+  },
+  {
+    "id": 5,
+    "title": "The Relationship between Ultraviolet Exposure and Vitamin D Status",
+    "authors": "Holick MF et al.",
+    "year": 2011,
+    "source": "Journal of Photochemistry and Photobiology / PMC",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3257661/",
+    "category": "Vitamin D / UV Safety"
+  },
+  {
+    "id": 6,
+    "title": "Effects of UV-B Light Exposure During Automatic Milking",
+    "authors": "Norell et al.",
+    "year": 2025,
+    "source": "Frontiers in Veterinary Science / PMC",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11776301/",
+    "category": "Vitamin D / UVB LED Research"
+  },
+  {
+    "id": 7,
+    "title": "Photobiomodulation: Shining a Light on Depression",
+    "authors": "Hamblin MR et al.",
+    "year": 2024,
+    "source": "Frontiers in Neuroscience / PMC",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11671386/",
+    "category": "Red / NIR Therapy"
+  },
+  {
+    "id": 8,
+    "title": "Controlled Trial of Red and Near-Infrared Light Treatment in Patient Satisfaction, Reduction of Fine Lines, and Collagen Density Increase",
+    "authors": "Lee et al.",
+    "year": 2014,
+    "source": "Photomedicine and Laser Surgery / PMC",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3926176/",
+    "category": "Red / NIR Skin Therapy"
+  },
+  {
+    "id": 9,
+    "title": "Low-Level Light Stimulates Excisional Wound Healing in Mice",
+    "authors": "Demidova-Rice TN et al.",
+    "year": 2010,
+    "source": "Journal of Photochemistry and Photobiology / PMC",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2935798/",
+    "category": "Wound Healing / Near-Infrared"
+  },
+  {
+    "id": 10,
+    "title": "Evaluation of Green Light Exposure on Headache Frequency and Pain Intensity in Migraine Patients",
+    "authors": "Noseda et al.",
+    "year": 2021,
+    "source": "Frontiers in Neurology / PMC",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8034831/",
+    "category": "Green Light / Migraine"
+  },
+  {
+    "id": 11,
+    "title": "Clinical Efficacy of Self-Applied Blue Light Therapy for Mild-to-Moderate Acne",
+    "authors": "Gold et al.",
+    "year": 2010,
+    "source": "Journal of Clinical and Aesthetic Dermatology / PMC",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2923954/",
+    "category": "Blue Light / Acne"
+  },
+  {
+    "id": 12,
+    "title": "40 Hz Light Flicker as a Non-Invasive Therapy for Alzheimer’s Disease",
+    "authors": "Iaccarino et al.",
+    "year": 2023,
+    "source": "Frontiers in Aging Neuroscience / PMC",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10600489/",
+    "category": "Gamma Flicker / Neurology"
+  },
+  {
+    "id": 13,
+    "title": "Gamma Band Light Stimulation in Human Case Studies: Groundwork for Potential Alzheimer’s Disease Treatment",
+    "authors": "Martorell et al.",
+    "year": 2021,
+    "source": "Frontiers in Human Neuroscience / PMC",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6700637/",
+    "category": "Gamma Flicker / Human Studies"
+  }
+]

@@ -1,0 +1,1438 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="DIY LED Longevity Panels – evidence-based, maker-friendly">
+      
+      
+      
+        <link rel="canonical" href="https://DontDieGloriously.github.io/openlumen/research/">
+      
+      
+        <link rel="prev" href="../build/safety/">
+      
+      
+        <link rel="next" href="../references/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+    
+    
+      
+        <title>Design Rationale - OpenLumen Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#openlumen-research-overview" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="OpenLumen Docs" class="md-header__button md-logo" aria-label="OpenLumen Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OpenLumen Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Design Rationale
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/DontDieGloriously/openlumen" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    DontDieGloriously/openlumen
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href=".." class="md-tabs__link">
+          
+  
+  
+  Overview
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../build/getting-started/" class="md-tabs__link">
+          
+  
+  
+  Build
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Research
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../research_sources.json" class="md-tabs__link">
+          
+  
+  
+  Data
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../licenses/" class="md-tabs__link">
+          
+  
+  
+  Legal
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="OpenLumen Docs" class="md-nav__button md-logo" aria-label="OpenLumen Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    OpenLumen Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/DontDieGloriously/openlumen" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    DontDieGloriously/openlumen
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Overview
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Welcome
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../goals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project Goals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Build
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Build
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../build/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../build/hardware-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hardware Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../build/firmware-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Firmware & UI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../build/safety/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Safety
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Research
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Research
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Design Rationale
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Design Rationale
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-bright-light-therapy-and-circadian-entrainment" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Bright-Light Therapy and Circadian Entrainment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-sunlight-replication-and-vitamin-d-synthesis" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Sunlight Replication and Vitamin D Synthesis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-photobiomodulation-red-near-infrared-light" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Photobiomodulation (Red + Near-Infrared Light)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-green-light-therapy-for-migraine-and-pain" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Green Light Therapy for Migraine and Pain
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-blue-light-therapy-for-acne-and-skin-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Blue Light Therapy for Acne and Skin Conditions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-gamma-frequency-40-hz-light-flicker-for-neurological-health" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Gamma-Frequency (≈ 40 Hz) Light Flicker for Neurological Health
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-other-potential-functionalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Other Potential Functionalities
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-key-wavelengths-and-parameters-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Key Wavelengths and Parameters Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-safety-design-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Safety &amp; Design Principles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reference Library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Data
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Data
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research_sources.json" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sources (JSON)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Legal
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Legal
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../licenses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Licenses
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../commercial-license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Commercial License
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-bright-light-therapy-and-circadian-entrainment" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Bright-Light Therapy and Circadian Entrainment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-sunlight-replication-and-vitamin-d-synthesis" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Sunlight Replication and Vitamin D Synthesis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-photobiomodulation-red-near-infrared-light" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Photobiomodulation (Red + Near-Infrared Light)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-green-light-therapy-for-migraine-and-pain" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Green Light Therapy for Migraine and Pain
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-blue-light-therapy-for-acne-and-skin-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Blue Light Therapy for Acne and Skin Conditions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-gamma-frequency-40-hz-light-flicker-for-neurological-health" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Gamma-Frequency (≈ 40 Hz) Light Flicker for Neurological Health
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-other-potential-functionalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Other Potential Functionalities
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-key-wavelengths-and-parameters-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Key Wavelengths and Parameters Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-safety-design-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Safety &amp; Design Principles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="openlumen-research-overview">🧪 OpenLumen Research Overview<a class="headerlink" href="#openlumen-research-overview" title="Permanent link">&para;</a></h1>
+<p><em>Evidence-based reference for the design of DIY LED longevity panels.</em></p>
+<hr />
+<h2 id="1-bright-light-therapy-and-circadian-entrainment">1. Bright-Light Therapy and Circadian Entrainment<a class="headerlink" href="#1-bright-light-therapy-and-circadian-entrainment" title="Permanent link">&para;</a></h2>
+<p><strong>Purpose:</strong> Realign circadian rhythm, improve alertness and mood, and support wakefulness when natural sunlight is unavailable.</p>
+<ul>
+<li>
+<p><strong>10 000 lux morning light</strong> – Clinical light boxes for Seasonal Affective Disorder (SAD) typically emit 10 000 lux of diffuse light.<br />
+  The <strong>Mayo Clinic</strong> recommends using such light <strong>within the first hour after waking</strong>, for <strong>20–30 minutes</strong>, at a distance of <strong>40–60 cm (16–24 inches)</strong>.<br />
+  The light should filter out UV.<br />
+  → <a href="https://www.mayoclinic.org/diseases-conditions/seasonal-affective-disorder/in-depth/seasonal-affective-disorder-treatment/art-20048298">Mayo Clinic: Seasonal Affective Disorder Treatment</a> :contentReference[oaicite:0]{index=0}</p>
+</li>
+<li>
+<p><strong>Dawn Simulation</strong> – Gradual pre-wake light increase improves alertness and subjective well-being.<br />
+  Laboratory studies found that a gradual increase to ~250 lux before wake-up improved alertness compared with static or dim light exposure.<br />
+  → <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5136610/">Industrial Health Study – Dawn Simulation</a> :contentReference[oaicite:1]{index=1}</p>
+</li>
+<li>
+<p><strong>Melatonin-friendly evening light</strong> –<br />
+  A 2025 randomized study compared 3-hour exposures to <strong>blue (464 nm)</strong> vs <strong>red (631 nm)</strong> LEDs.<br />
+  Salivary melatonin dropped significantly under blue light but recovered under red light, demonstrating that <strong>red light minimally disrupts circadian rhythm</strong>.<br />
+  → <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12113466/">Comparative Effects of Red and Blue LED Light on Melatonin Levels – PMC</a> :contentReference[oaicite:2]{index=2}</p>
+</li>
+</ul>
+<p><strong>Design implication:</strong><br />
+Include programmable “Daylight” (~10 000 lux) and “Evening” (red/amber) modes, plus an automatic <strong>30-minute sunrise sequence</strong> up to ~250 lux.</p>
+<hr />
+<h2 id="2-sunlight-replication-and-vitamin-d-synthesis">2. Sunlight Replication and Vitamin D Synthesis<a class="headerlink" href="#2-sunlight-replication-and-vitamin-d-synthesis" title="Permanent link">&para;</a></h2>
+<p><strong>Goal:</strong> Enable safe vitamin D production using controlled UV-B emission.</p>
+<ul>
+<li>
+<p><strong>Vitamin D Action Spectrum</strong> –<br />
+  Vitamin D synthesis peaks at <strong>~295 nm</strong>, effective range <strong>290–315 nm</strong>, via UV-B conversion of 7-dehydrocholesterol to pre-vitamin D₃.<br />
+  → <a href="https://niwa.co.nz/sites/default/files/action_spectrum_for_vit_d_synthesis.pdf">NIWA: Action Spectrum for Vitamin D Synthesis PDF</a> :contentReference[oaicite:3]{index=3}</p>
+</li>
+<li>
+<p><strong>Safe Dosing (“Holick’s Rule”)</strong> –<br />
+  One <em>minimal erythema dose (MED)</em> of whole-body UV exposure (~mild pinkness) ≈ 10 000–25 000 IU of vitamin D₃.<br />
+  Exposing ¼ of the body to ¼ of an MED yields ≈ 1 000 IU.<br />
+  → <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3257661/">The Relationship between UV Exposure and Vitamin D Status – PMC</a> :contentReference[oaicite:4]{index=4}</p>
+</li>
+<li>
+<p><strong>UV-B LED safety example:</strong><br />
+  A 2025 veterinary study used <strong>295 nm LEDs</strong> delivering <strong>80–360 J/m² daily</strong>, considered safe under Holick’s limits.<br />
+  → <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11776301/">Effects of UV-B Light Exposure During Automatic Milking – PMC</a> :contentReference[oaicite:5]{index=5}</p>
+</li>
+</ul>
+<p><strong>Design implication:</strong><br />
+Use narrowband 295 nm LEDs with hardware interlocks, dose timers, and protective filters; cap exposure to ≤ 100 J/m².</p>
+<hr />
+<h2 id="3-photobiomodulation-red-near-infrared-light">3. Photobiomodulation (Red + Near-Infrared Light)<a class="headerlink" href="#3-photobiomodulation-red-near-infrared-light" title="Permanent link">&para;</a></h2>
+<p><strong>Purpose:</strong> Mitochondrial stimulation, wound healing, skin rejuvenation, and neuroprotection.</p>
+<ul>
+<li>
+<p><strong>Mechanism:</strong><br />
+  Light in the <strong>600–1100 nm</strong> range stimulates cytochrome c oxidase, enhancing ATP production and nitric-oxide signaling.<br />
+  → <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11671386/">Photobiomodulation: Shining a Light on Depression – PMC</a> :contentReference[oaicite:6]{index=6}</p>
+</li>
+<li>
+<p><strong>Typical Parameters:</strong>  </p>
+</li>
+<li>Irradiance: <strong>10–30 mW/cm²</strong>  </li>
+<li>Energy density: <strong>0.1–15 J/cm²</strong>  </li>
+<li>
+<p>Pulse frequency: <strong>1–3000 Hz</strong><br />
+  → Same source:contentReference[oaicite:7]{index=7}</p>
+</li>
+<li>
+<p><strong>Skin Rejuvenation Trial:</strong><br />
+  Volunteers treated twice weekly with <strong>611–650 nm</strong> or <strong>570–850 nm</strong> broadband light improved skin smoothness and collagen density.<br />
+  → <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3926176/">Controlled Clinical Trial – PMC</a> :contentReference[oaicite:8]{index=8}</p>
+</li>
+<li>
+<p><strong>Wound Healing:</strong><br />
+  Mouse studies: <strong>820 nm</strong> produced the best healing, closing wounds 3–4 days faster than shorter wavelengths at 1–2 J/cm².<br />
+  → <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2935798/">Low-Level Light Stimulates Wound Healing – PMC</a> :contentReference[oaicite:9]{index=9}</p>
+</li>
+</ul>
+<p><strong>Design implication:</strong><br />
+Include 630–660 nm and 820–850 nm LEDs, selectable fluence 1–10 J/cm², and optional pulsed mode for thermal management.</p>
+<hr />
+<h2 id="4-green-light-therapy-for-migraine-and-pain">4. Green Light Therapy for Migraine and Pain<a class="headerlink" href="#4-green-light-therapy-for-migraine-and-pain" title="Permanent link">&para;</a></h2>
+<p><strong>Clinical Data:</strong><br />
+A crossover trial (29 participants) compared white vs green LED exposure (525 ± 10 nm).<br />
+- Duration: 1–2 h daily for 10 weeks.<br />
+- Results: Significant reduction in headache days and improved quality of life.<br />
+→ <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8034831/">Evaluation of Green Light Exposure on Headache Frequency – PMC</a> :contentReference[oaicite:10]{index=10}</p>
+<p><strong>Design implication:</strong><br />
+Add a low-intensity green-light mode (around 525 nm) for 1–2 h comfort sessions.</p>
+<hr />
+<h2 id="5-blue-light-therapy-for-acne-and-skin-conditions">5. Blue Light Therapy for Acne and Skin Conditions<a class="headerlink" href="#5-blue-light-therapy-for-acne-and-skin-conditions" title="Permanent link">&para;</a></h2>
+<p><strong>Mechanism:</strong><br />
+<em>Propionibacterium acnes</em> produces porphyrins that absorb <strong>blue light (~415 nm)</strong>; activation releases singlet oxygen that kills bacteria.</p>
+<ul>
+<li><strong>Clinical Efficacy:</strong><br />
+  A self-applied 414 nm LED device used 6 min per day for 8 weeks significantly reduced acne lesions.<br />
+  → <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2923954/">Clinical Efficacy of Self-Applied Blue Light Therapy – PMC</a> :contentReference[oaicite:11]{index=11}</li>
+</ul>
+<p><strong>Safety note:</strong><br />
+Avoid prolonged or late-evening exposure due to blue light’s melatonin suppression.</p>
+<hr />
+<h2 id="6-gamma-frequency-40-hz-light-flicker-for-neurological-health">6. Gamma-Frequency (≈ 40 Hz) Light Flicker for Neurological Health<a class="headerlink" href="#6-gamma-frequency-40-hz-light-flicker-for-neurological-health" title="Permanent link">&para;</a></h2>
+<p><strong>Concept:</strong> Non-invasive entrainment of neural gamma rhythms (~40 Hz) may help reduce amyloid-β and tau in Alzheimer’s models.</p>
+<ul>
+<li>
+<p><strong>Animal Data:</strong><br />
+  1 h/day of 40 Hz flicker reduced amyloid and tau accumulation.<br />
+  → <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10600489/">Study on 40 Hz Non-Invasive Light Therapy – PMC</a> :contentReference[oaicite:12]{index=12}</p>
+</li>
+<li>
+<p><strong>Human Case Studies:</strong><br />
+  40 Hz stimulation (208–435 lumens at 30 cm) entrained EEG gamma rhythms more effectively than 60 Hz or 80 Hz flicker.<br />
+  → <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6700637/">Gamma Band Light Stimulation – PMC</a> :contentReference[oaicite:13]{index=13}</p>
+</li>
+</ul>
+<p><strong>Design implication:</strong><br />
+Add programmable flicker (30–60 Hz range) with adjustable duty cycle; default to ~150 lux for comfort.</p>
+<hr />
+<h2 id="7-other-potential-functionalities">7. Other Potential Functionalities<a class="headerlink" href="#7-other-potential-functionalities" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Wavelength</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Blue Light for Neonatal Jaundice</strong></td>
+<td>~460 nm</td>
+<td>Used clinically to photo-isomerize bilirubin; for research only.</td>
+</tr>
+<tr>
+<td><strong>UV-A / PUVA Therapy for Psoriasis</strong></td>
+<td>311 nm UV-B or UVA + Psoralen</td>
+<td>Requires medical supervision; not for consumer devices.</td>
+</tr>
+<tr>
+<td><strong>Pulsed Audio/Light Stimulation</strong></td>
+<td>40 Hz combined photic + auditory</td>
+<td>May enhance gamma entrainment; under active study.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8-key-wavelengths-and-parameters-summary">8. Key Wavelengths and Parameters Summary<a class="headerlink" href="#8-key-wavelengths-and-parameters-summary" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Wavelength(s)</th>
+<th>Typical Intensity / Dose</th>
+<th>Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Morning Light</td>
+<td>Full-spectrum white (5000–6500 K)</td>
+<td>10 000 lux for 20–30 min</td>
+<td>Mayo Clinic:contentReference[oaicite:14]{index=14}</td>
+</tr>
+<tr>
+<td>Dawn Simulation</td>
+<td>Warm white ramp to 250 lux</td>
+<td>30 min ramp pre-wake</td>
+<td>Industrial Health:contentReference[oaicite:15]{index=15}</td>
+</tr>
+<tr>
+<td>Evening / Red Light</td>
+<td>631 nm</td>
+<td>Avoid blue (~460 nm)</td>
+<td>Melatonin study:contentReference[oaicite:16]{index=16}</td>
+</tr>
+<tr>
+<td>Vitamin D</td>
+<td>295 nm UV-B</td>
+<td>≤ 100 J/m²</td>
+<td>NIWA + Holick:contentReference[oaicite:17]{index=17}:contentReference[oaicite:18]{index=18}</td>
+</tr>
+<tr>
+<td>PBM (Red/NIR)</td>
+<td>630–850 nm</td>
+<td>10–30 mW/cm²; 1–15 J/cm²</td>
+<td>PBM review:contentReference[oaicite:19]{index=19}</td>
+</tr>
+<tr>
+<td>Skin Rejuvenation</td>
+<td>611–650 nm / 570–850 nm</td>
+<td>8–50 J/cm²</td>
+<td>Clinical trial:contentReference[oaicite:20]{index=20}</td>
+</tr>
+<tr>
+<td>Wound Healing</td>
+<td>635–820 nm</td>
+<td>1–2 J/cm²</td>
+<td>Mouse study:contentReference[oaicite:21]{index=21}</td>
+</tr>
+<tr>
+<td>Migraine Relief</td>
+<td>525 ± 10 nm</td>
+<td>1–2 h/day</td>
+<td>Green LED trial:contentReference[oaicite:22]{index=22}</td>
+</tr>
+<tr>
+<td>Acne Therapy</td>
+<td>414–420 nm</td>
+<td>6 min/day</td>
+<td>Blue light study:contentReference[oaicite:23]{index=23}</td>
+</tr>
+<tr>
+<td>Gamma Flicker</td>
+<td>40 Hz</td>
+<td>~150 lux</td>
+<td>Human EEG study:contentReference[oaicite:24]{index=24}</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="9-safety-design-principles">9. Safety &amp; Design Principles<a class="headerlink" href="#9-safety-design-principles" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Follow <strong>IEC 62471</strong> photobiological safety standards for lamp exposure.  </li>
+<li>Include hardware interlocks for UV + high-intensity blue modes.  </li>
+<li>Require eye protection and limit session durations.  </li>
+<li>Implement thermal monitoring and automatic timeouts.  </li>
+<li>Provide clear user documentation and educational prompts in the UI.</li>
+</ul>
+<hr />
+<h2 id="references">📚 References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<p>For the complete list of scientific sources that inform OpenLumen’s wavelength selections, exposure parameters, and design principles, see:</p>
+<ul>
+<li><a href="../references/"><strong>Full Reference Library (Markdown)</strong></a> – A human-readable table of all peer-reviewed papers and institutional sources used in this project.  </li>
+<li><a href="../research_sources.json"><strong>Structured Source Data (JSON)</strong></a> – Machine-readable citation metadata for use in documentation pipelines or web UIs.</li>
+</ul>
+<p>These resources are continuously updated as new studies emerge and OpenLumen expands into new light-based applications.</p>
+<hr />
+<p><em>Prepared for the OpenLumen Project by Don't Die Gloriously – 2025.</em><br />
+<em>All citations link to open-access or peer-reviewed sources.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/DontDieGloriously" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "content.code.copy", "toc.follow", "search.highlight", "search.suggest"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
