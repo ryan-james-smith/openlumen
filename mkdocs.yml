@@ -1,0 +1,64 @@
+site_name: OpenLumen Docs
+site_description: DIY LED Longevity Panels – evidence-based, maker-friendly
+site_url: https://<your-username>.github.io/<your-repo>/
+repo_url: https://github.com/<your-username>/<your-repo>
+repo_name: <your-username>/<your-repo>
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - content.code.copy
+    - toc.follow
+    - search.highlight
+    - search.suggest
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+
+plugins:
+  - search
+  - tags
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - tables
+  - footnotes
+  - attr_list
+  - def_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.emoji
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/<your-username>
+
+nav:
+  - Overview:
+      - "Welcome": docs/index.md
+      - "Project Goals": docs/goals.md
+  - Build:
+      - "Getting Started": docs/build/getting-started.md
+      - "Hardware Overview": docs/build/hardware-overview.md
+      - "Firmware & UI": docs/build/firmware-ui.md
+      - "Safety": docs/build/safety.md
+  - Research:
+      - "Design Rationale": docs/research.md
+      - "Reference Library": docs/references.md
+  - Data:
+      - "Sources (JSON)": docs/research_sources.json
+  - Legal:
+      - "Licenses": docs/licenses.md
+      - "Commercial License": COMMERCIAL_LICENSE.md
