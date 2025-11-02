@@ -61,4 +61,4 @@ nav:
       - "Sources (JSON)": research_sources.json
   - Legal:
       - "Licenses": licenses.md
-      - "Commercial License": ../COMMERCIAL_LICENSE.md
+      - "Commercial License": commercial-license.md
