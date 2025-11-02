@@ -108,11 +108,11 @@ Consult a qualified professional before attempting therapeutic use.
 
 | Part | License | Notes |
 |------|----------|-------|
-| Hardware / Firmware / Software | **PolyForm Noncommercial 1.0.0** (free for personal & educational use) | Commercial use requires a license from Fat Possum Pty Ltd |
+| Hardware / Firmware / Software | **PolyForm Noncommercial 1.0.0** (free for personal & educational use) | Commercial use requires a license from Don't Die Gloriously |
 | Documentation & Research | **CC BY-SA 4.0** | Open for sharing and adaptation with attribution |
-| Commercial Use | **By Agreement** | Contact [licensing@fatpossum.au](mailto:licensing@fatpossum.au) |
+| Commercial Use | **By Agreement** | Contact [licensing@dontdiegloriously.com](mailto:licensing@dontdiegloriously.com) |
 
-© 2025 Fat Possum Pty Ltd – All rights reserved for commercial use.
+© 2025 Don't Die Gloriously – All rights reserved for commercial use.
 
 ---
 
